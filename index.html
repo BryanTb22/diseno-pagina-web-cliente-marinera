@@ -313,6 +313,13 @@ footer p{margin:0;font-size:var(--t14);opacity:.85;overflow-wrap:anywhere}
 .wa-flot:hover{transform:scale(1.06)}
 .wa-flot svg{width:30px;height:30px;color:#fff}
 @media (max-width:600px){.wa-flot{right:calc(var(--s2) + env(safe-area-inset-right,0px));bottom:calc(var(--s2) + env(safe-area-inset-bottom,0px));width:56px;height:56px}}
+/* Celular: las grillas de 12 columnas pasan a una columna para que nada desborde */
+@media (max-width:760px){
+  .g12,.medidas,.f-top{grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+  .g12 > *,.medidas > *,.f-top > *{grid-column:auto!important}
+  .f-top{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .f-brand,.f-col.ancha{grid-column:1 / -1!important}
+}
 </style>
 </head>
 <body>
@@ -598,7 +605,7 @@ footer p{margin:0;font-size:var(--t14);opacity:.85;overflow-wrap:anywhere}
   <div class="detalle-wrap">
     <div class="modal">
       <button class="cerrar" type="button" data-cerrar aria-label="Cerrar">×</button>
-      <div class="m-foto"><img id="d-foto" src="" alt="" width="720" height="960"></div>
+      <div class="m-foto"><img id="d-foto" alt="" width="720" height="960"></div>
       <div class="m-info">
         <span class="tela" id="d-tela"></span>
         <h2 id="d-nombre"></h2>
@@ -619,7 +626,7 @@ footer p{margin:0;font-size:var(--t14);opacity:.85;overflow-wrap:anywhere}
   <div class="lb">
     <button class="cerrar" type="button" data-cerrar aria-label="Cerrar">×</button>
     <button class="flecha prev" type="button" aria-label="Foto anterior">‹</button>
-    <img id="v-foto" src="" alt="">
+    <img id="v-foto" alt="">
     <button class="flecha next" type="button" aria-label="Foto siguiente">›</button>
     <p class="lb-cap" id="v-cap"></p>
   </div>
